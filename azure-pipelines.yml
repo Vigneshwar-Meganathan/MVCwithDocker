@@ -38,7 +38,8 @@ steps:
     buildType: 'specific'
     project: '242b1977-0318-474d-8a9e-87d65c6f536d'
     pipeline: '76'
-    buildVersionToDownload: 'latest'
+    buildVersionToDownload: 'latestFromBranch'
+    branchName: 'refs/heads/master'
     downloadType: 'specific'
     downloadPath: '$(System.ArtifactsDirectory)'
     
