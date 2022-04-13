@@ -1,10 +1,3 @@
-resources:
- pipelines:
-   - pipeline: Testpipeline
-     project: Triggering option
-     source: SourceYamlFile
-     trigger: true
-
 trigger:
 - master
 
