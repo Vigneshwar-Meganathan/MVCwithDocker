@@ -39,7 +39,7 @@ steps:
     project: '242b1977-0318-474d-8a9e-87d65c6f536d'
     pipeline: '76'
     buildVersionToDownload: 'latest'
-    downloadType: 'single'
+    downloadType: 'specific'
     downloadPath: '$(System.ArtifactsDirectory)'
     
 - task: AzureRmWebAppDeployment@4
