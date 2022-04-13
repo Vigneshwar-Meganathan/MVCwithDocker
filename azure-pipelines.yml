@@ -41,12 +41,12 @@ steps:
     buildVersionToDownload: 'latest'
     downloadType: 'specific'
     downloadPath: '$(System.ArtifactsDirectory)'
+    
 
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'Vicky-Demo.V2 (7a8d40b6-7f16-48d4-ad95-56fc81f464a2)'
+    azureSubscription: 'ServiceConnection_Vigneshwar'
     appType: 'webApp'
     WebAppName: 'dotnetwithdockervignesh'
     packageForLinux: '$(System.ArtifactsDirectory)/sample-site/WebApp.zip
-'
