@@ -36,13 +36,12 @@ steps:
 - task: DownloadBuildArtifacts@1
   inputs:
     buildType: 'specific'
-    project: 'd3917c9e-cb2c-4f26-9647-da26b8b117a5'
-    pipeline: '55'
+    project: '242b1977-0318-474d-8a9e-87d65c6f536d'
+    pipeline: '76'
     buildVersionToDownload: 'latest'
-    downloadType: 'specific'
+    downloadType: 'single'
     downloadPath: '$(System.ArtifactsDirectory)'
     
-
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
