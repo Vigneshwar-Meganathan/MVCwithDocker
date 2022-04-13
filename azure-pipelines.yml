@@ -1,6 +1,14 @@
 trigger:
 - master
 
+resources:
+  pipelines:
+  - pipeline: TriggerBySource   # Name of the pipeline resource
+    source: SourceYamlFile # Name of the pipeline referenced by the pipeline resource
+    project: Triggering option # Required only if the source pipeline is in another project
+    trigger: true # enable the trigger
+
+
 pool:
   vmImage: 'windows-latest'
 
