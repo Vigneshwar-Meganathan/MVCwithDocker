@@ -49,4 +49,4 @@ steps:
     azureSubscription: 'ServiceConnection_Vigneshwar'
     appType: 'webApp'
     WebAppName: 'dotnetwithdockervignesh'
-    packageForLinux: '$(System.ArtifactsDirectory)/sample-site/WebApp.zip
+    packageForLinux: '$(System.ArtifactsDirectory)/sample-site/WebApp.zip'
