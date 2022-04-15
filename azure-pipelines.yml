@@ -41,20 +41,3 @@ steps:
     ArtifactName:  sample-site
     PathtoPublish: $(build.artifactStagingDirectory)
 
-- task: DownloadBuildArtifacts@1
-  inputs:
-    buildType: 'specific'
-    project: '242b1977-0318-474d-8a9e-87d65c6f536d'
-    pipeline: '76'
-    buildVersionToDownload: 'latestFromBranch'
-    branchName: 'refs/heads/master'
-    downloadType: 'specific'
-    downloadPath: '$(System.ArtifactsDirectory)'
-    
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'ServiceConnection_Vigneshwar'
-    appType: 'webApp'
-    WebAppName: 'dotnetwithdockervignesh'
-    packageForLinux: '$(System.ArtifactsDirectory)/sample-site/WebApp.zip'
