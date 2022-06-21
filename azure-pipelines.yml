@@ -1,0 +1,30 @@
+trigger:
+- master
+
+pool:
+  name: Azure Pipelines
+steps:
+- task: Docker@1
+  displayName: build
+  inputs:
+    azureSubscriptionEndpoint: 'Vigneshwar-ServiceConnections'
+    azureContainerRegistry: acryamlpipeline.azurecr.io
+    command: build
+    dockerFile: WebApplication3/Dockerfile
+
+- task: Docker@1
+  displayName: push
+  inputs:
+    azureSubscriptionEndpoint: 'Vigneshwar-ServiceConnections'
+    azureContainerRegistry: acryamlpipeline.azurecr.io
+    command: push
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  inputs:
+    SourceFolder: WebApplication3
+    TargetFolder: '$(build.artifactstagingdirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+
